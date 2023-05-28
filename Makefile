@@ -5,8 +5,8 @@ PROGS = $(patsubst %.c,%,$(SRCS))
 all: $(PROGS)
 
 %: %.c
-    gcc -Wall -Wextra -o $@ $<
+	gcc -Wall -Wextra -o $@ $<
 
 .PHONY: clean
 clean:
-    rm -f $(PROGS)
+	rm -f $(PROGS)
