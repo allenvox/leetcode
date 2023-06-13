@@ -17,7 +17,7 @@ int *runningSum(int *nums, int numsSize, int *returnSize) {
 void output(int *nums, int numsSize) {
     int returnSize;
     int *results = runningSum(nums, numsSize, &returnSize);
-    printf("Running sum of for each element of array { ");
+    printf("Running sum for each element of the array { ");
     for(int i = 0; i < numsSize; i++) {
         printf("%d ", nums[i]);
     }
