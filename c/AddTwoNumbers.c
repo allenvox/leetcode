@@ -7,7 +7,7 @@ struct ListNode {
 };
 
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
-    struct ListNode *res = NULL, *cur, *prev;
+    struct ListNode *res = NULL, *cur, *prev = NULL;
     int value = 0;
     while (l1 != NULL || l2 != NULL || value != 0) {
         cur = malloc(sizeof(struct ListNode));
