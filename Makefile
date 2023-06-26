@@ -1,11 +1,11 @@
-SRCS = $(wildcard *.c)
-PROGS = $(patsubst %.c,%,$(SRCS))
+SRCS = $(wildcard c/*.c)
+PROGS = $(patsubst %.c,%.out,$(SRCS))
 
 .PHONY: all
 all: $(PROGS)
 
 %: %.c
-	gcc -Wall -Wextra -o $@ $<
+	gcc -Wall -Wextra -o $@.out $<
 
 .PHONY: clean
 clean:
