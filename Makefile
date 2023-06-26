@@ -4,8 +4,12 @@ PROGS = $(patsubst %.c,%.out,$(SRCS))
 .PHONY: all
 all: $(PROGS)
 
-%: %.c
-	gcc -Wall -Wextra -o $@.out $<
+%.out: %.c
+	gcc -Wall -Wextra -o $@ $<
+
+.PHONY: run
+run: $(PROGS)
+	for out in c/*.out; do echo "\nTask $$out:"; $$out; echo "\n"; done
 
 .PHONY: clean
 clean:
