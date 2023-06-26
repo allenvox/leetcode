@@ -17,9 +17,9 @@ void printbinary(unsigned a) {
 }
 
 void output(uint32_t n) {
-    printf("Number %d (");
+    printf("Number %d (", n);
     printbinary(n);
-    printf(") contains %d bits\n", n, hammingWeight(n));
+    printf(") contains %d bits\n", hammingWeight(n));
 }
 
 int main() {
