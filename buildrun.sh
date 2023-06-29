@@ -1,15 +1,14 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-  for i in *.c; do
-    gcc -Wall -Wextra -o ${i%.c}.out "$i"
-    echo -e "\n${i%.c}:"
-    ./${i%.c}.out
-  done
+  echo -e "Usage: ./$(basename $0) <taskname>"
 else
   if test -f "$1.c"; then
-    gcc -Wall -Wextra -o $1.out $1.c
-    ./$1.out
+    gcc -Wall -Wextra -o $1.cout $1.c
+    ./$1.cout
+  elif test -f "$1.cpp"; then
+    g++ -Wall -Wextra -pedantic -std=c++1y -o $1.cppout $1.cpp
+    ./$1.cppout
   else
     echo -e "File '$1.c' doesn't exist.\nUsage: ./$(basename $0) <taskname>"
   fi
