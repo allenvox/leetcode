@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int equalPairs(int **grid, int gridSize, int *gridColSize) {
+int equalPairs(int **grid, int gridSize) {
     int result = 0;
     for(int i = 0; i < gridSize; i++) { // all rows
         for(int j = 0; j < gridSize; j++) { // all cols
@@ -18,7 +18,7 @@ int equalPairs(int **grid, int gridSize, int *gridColSize) {
 }
 
 void output(int **grid, int gridSize) {
-    printf("There are %d equal row & column pairs in this matrix:\n", equalPairs(grid, gridSize, NULL));
+    printf("There are %d equal row & column pairs in this matrix:\n", equalPairs(grid, gridSize));
     for(int i = 0; i < gridSize; i++) {
         for(int j = 0; j < gridSize; j++) {
             printf("%d ", grid[i][j]);
