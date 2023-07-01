@@ -6,14 +6,17 @@ CPPC = g++
 CPP_SRCS = $(wildcard cpp/*.cpp)
 CPP_PROGS = $(patsubst %.cpp,%.cppout,$(CPP_SRCS))
 
+C_FLAGS = -Wall -Wextra -Werror
+CPP_FLAGS = -pedantic -std=c++1y
+
 .PHONY: all
 all: $(C_PROGS) $(CPP_PROGS)
 
 %.cout: %.c
-	$(CC) -Wall -Wextra -o $@ $<
+	$(CC) $(C_FLAGS) -o $@ $<
 
 %.cppout: %.cpp
-	$(CPPC) -Wall -Wextra -pedantic -std=c++1y -o $@ $<
+	$(CPPC) $(C_FLAGS) $(CPP_FLAGS) -o $@ $<
 
 .PHONY: run
 run: $(C_PROGS) $(CPP_PROGS)
