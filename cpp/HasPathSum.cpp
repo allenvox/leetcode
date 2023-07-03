@@ -23,8 +23,8 @@ public:
     void printBT(const std::string &prefix, const TreeNode* node, bool isLeft) {
         if(node) {
             cout << prefix << (isLeft ? "├──" : "└──" ) << node->val << endl;
-            printBT(prefix + (isLeft ? "│   " : "    "), node->left, true);
-            printBT(prefix + (isLeft ? "│   " : "    "), node->right, false);
+            printBT(prefix + (isLeft ? "    " : "    "), node->left, true);
+            printBT(prefix + (isLeft ? "    " : "    "), node->right, false);
         }
     }
 
