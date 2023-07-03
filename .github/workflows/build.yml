@@ -2,6 +2,12 @@ name: Build
 on: push
 
 jobs:
+  check_codestyle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check codestyle
+        run: git ls-files '*.c' '*.h' '*.cpp' '*.hpp' | xargs clang-format -i --verbose && git diff --exit-code
   build_all:
     runs-on: ubuntu-latest
     steps:
