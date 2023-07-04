@@ -1,10 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wsign-conversion
 CSRC = $(wildcard c/*.c)
 CEXEC = $(patsubst %.c,%.cout,$(CSRC))
 
 CXX = g++
-CXXFLAGS = -pedantic -std=c++1y
+CXXFLAGS = -pedantic -std=c++17
 CXXSRC = $(wildcard cpp/*.cpp)
 CXXEXEC = $(patsubst %.cpp,%.cppout,$(CXXSRC))
 
