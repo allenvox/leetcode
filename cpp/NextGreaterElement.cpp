@@ -9,20 +9,19 @@ class Solution {
   vector<int> nextGreaterElement(vector<int> &nums1, vector<int> &nums2) {
     unordered_map<int, int> map1;
     stack<int> stack1;
-    for (unsigned long i = nums2.size() - 1; i >= 0;
-         i--) {  // from end to beginning
+    for (int i = nums2.size() - 1; i >= 0; i--) {  // from end to beginning
       // pop all elements to the right that are less than current num
-      while (!stack1.empty() && stack1.top() < nums2[i]) {
+      while (!stack1.empty() && stack1.top() < nums2[(unsigned long)i]) {
         stack1.pop();
       }
       // if stack is empty -> no elements to the right greater than current, ans
       // = -1, if not empty -> ans = stack.top
       if (stack1.empty())
-        map1[nums2[i]] = -1;
+        map1[nums2[(unsigned long)i]] = -1;
       else
-        map1[nums2[i]] = stack1.top();
+        map1[nums2[(unsigned long)i]] = stack1.top();
       // push current num to the stack (it's to the right to others)
-      stack1.push(nums2[i]);
+      stack1.push(nums2[(unsigned long)i]);
     }
     // write answers from unordered map to vector
     vector<int> ans;
