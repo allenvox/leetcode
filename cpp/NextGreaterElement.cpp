@@ -9,7 +9,8 @@ class Solution {
   vector<int> nextGreaterElement(vector<int> &nums1, vector<int> &nums2) {
     unordered_map<int, int> map1;
     stack<int> stack1;
-    for (unsigned long i = nums2.size() - 1; i >= 0; i--) {  // from end to beginning
+    for (unsigned long i = nums2.size() - 1; i >= 0;
+         i--) {  // from end to beginning
       // pop all elements to the right that are less than current num
       while (!stack1.empty() && stack1.top() < nums2[i]) {
         stack1.pop();
