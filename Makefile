@@ -1,28 +1,29 @@
 CC = gcc
-C_SRCS = $(wildcard c/*.c)
-C_PROGS = $(patsubst %.c,%.cout,$(C_SRCS))
+CFLAGS = -Wall -Wextra -Werror
+CSRC = $(wildcard c/*.c)
+CEXEC = $(patsubst %.c,%.cout,$(CSRC))
 
-CPPC = g++
-CPP_SRCS = $(wildcard cpp/*.cpp)
-CPP_PROGS = $(patsubst %.cpp,%.cppout,$(CPP_SRCS))
-
-C_FLAGS = -Wall -Wextra -Werror
-CPP_FLAGS = -pedantic -std=c++1y
+CXX = g++
+CXXFLAGS = -pedantic -std=c++1y
+CXXSRC = $(wildcard cpp/*.cpp)
+CXXEXEC = $(patsubst %.cpp,%.cppout,$(CXXSRC))
 
 .PHONY: all
-all: $(C_PROGS) $(CPP_PROGS)
+all: $(CEXEC) $(CXXEXEC)
 
 %.cout: %.c
-	$(CC) $(C_FLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $<
 
 %.cppout: %.cpp
-	$(CPPC) $(C_FLAGS) $(CPP_FLAGS) -o $@ $<
+	$(CXX) $(CFLAGS) $(CXXFLAGS) -o $@ $<
 
 .PHONY: run
-run: $(C_PROGS) $(CPP_PROGS)
-	for out in c/*.cout; do echo "\nTask $$out:"; $$out; echo "\n"; done
-	for out in cpp/*.cppout; do echo "\nTask $$out:"; $$out; echo "\n"; done
+.SILENT: run
+run: $(CEXEC) $(CXXEXEC)
+	for out in c/*.cout; do echo "\nTask $$out:"; $$out; done
+	for out in cpp/*.cppout; do echo "\nTask $$out:"; $$out; done
 
 .PHONY: clean
+.SILENT: clean
 clean:
-	rm -f $(C_PROGS) $(CPP_PROGS)
+	rm -f $(CEXEC) $(CXXEXEC)
