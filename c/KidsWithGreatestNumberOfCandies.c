@@ -4,8 +4,8 @@
 
 bool *kidsWithCandies(int *candies, int candiesSize, int extraCandies,
                       int *returnSize) {
-  *returnSize = sizeof(bool) * candiesSize;
-  bool *results = malloc(*returnSize);
+  *returnSize = sizeof(bool) * (unsigned long)candiesSize;
+  bool *results = malloc((unsigned long)*returnSize);
   int max = 0;
   for (int i = 0; i < candiesSize; i++) {
     if (candies[i] > max) {

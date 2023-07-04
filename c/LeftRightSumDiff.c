@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int *leftRightDifference(int *nums, int numsSize, int *returnSize) {
-  int *results = malloc(sizeof(int) * numsSize);
+  int *results = malloc(sizeof(int) * (unsigned long)numsSize);
   for (int i = 0; i < numsSize; i++) {
     int leftsum = 0;
     for (int j = 0; j < i; j++) {

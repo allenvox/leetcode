@@ -30,9 +30,9 @@ void output(int **grid, int gridSize) {
 
 int main() {
   int size = 3;
-  int **x3 = malloc(sizeof(int *) * size);
+  int **x3 = malloc(sizeof(int *) * (unsigned long)size);
   for (int i = 0; i < size; i++) {
-    x3[i] = malloc(sizeof(int *) * size);
+    x3[i] = malloc(sizeof(int *) * (unsigned long)size);
   }
   x3[0][0] = 3;
   x3[0][1] = 2;
@@ -46,9 +46,9 @@ int main() {
   output(x3, size);
   printf("\n");
   size = 4;
-  int **x4 = malloc(sizeof(int *) * size);
+  int **x4 = malloc(sizeof(int *) * (unsigned long)size);
   for (int i = 0; i < size; i++) {
-    x4[i] = malloc(sizeof(int *) * size);
+    x4[i] = malloc(sizeof(int *) * (unsigned long)size);
   }
   x4[0][0] = 3;
   x4[0][1] = 1;

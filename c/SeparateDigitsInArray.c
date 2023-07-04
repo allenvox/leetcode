@@ -10,7 +10,7 @@ int *separateDigits(int *nums, int numsSize, int *returnSize) {
       n /= 10;
     }
   }
-  int *res = malloc(sizeof(int) * size);
+  int *res = malloc(sizeof(int) * (unsigned long)size);
   int cur = size - 1;
   for (int i = numsSize - 1; i >= 0; i--) {
     int n = nums[i];

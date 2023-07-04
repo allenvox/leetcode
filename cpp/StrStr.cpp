@@ -5,13 +5,13 @@ class Solution {
  public:
   int strStr(string haystack, string needle) {
     if (needle.size() > haystack.size()) return -1;
-    for (int i = 0; i <= (int)(haystack.size() - needle.size()); i++) {
-      int j = 0;
-      while (j < (int)needle.size()) {
+    for (unsigned long i = 0; i <= haystack.size() - needle.size(); i++) {
+      unsigned long j = 0;
+      while (j < needle.size()) {
         if (haystack[i + j] != needle[j]) break;
         j++;
       }
-      if (j == (int)needle.size()) return i;
+      if (j == needle.size()) return i;
     }
     return -1;
   }

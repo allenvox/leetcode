@@ -6,8 +6,8 @@ class Solution {
  public:
   bool isValidSudoku(vector<vector<char>> &board) {
     int rows[9][9] = {{0}}, cols[9][9] = {{0}}, squares[9][9] = {{0}};
-    for (int i = 0; i < 9; i++) {
-      for (int j = 0; j < 9; j++) {
+    for (unsigned long i = 0; i < 9; i++) {
+      for (unsigned long j = 0; j < 9; j++) {
         if (board[i][j] == '.') continue;
         int n_index = board[i][j] - '0' - 1;  // atoi & num_index = num - 1
         int k = (i / 3) * 3 + j / 3;          // index of 3x3 square
@@ -20,8 +20,8 @@ class Solution {
   }
 
   void output(vector<vector<char>> &board) {
-    for (int i = 0; i < 9; i++) {
-      for (int j = 0; j < 9; j++) {
+    for (unsigned long i = 0; i < 9; i++) {
+      for (unsigned long j = 0; j < 9; j++) {
         cout << board[i][j] << "  ";
       }
       cout << endl;

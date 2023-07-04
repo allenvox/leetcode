@@ -8,7 +8,7 @@ bool isPalindrome(char *s) {
   for (int i = 0; s[i] != '\0'; i++) {
     if (isalpha(s[i]) || isdigit(s[i])) size++;
   }
-  char *letters = malloc(sizeof(char) * size);
+  char *letters = malloc(sizeof(char) * (unsigned long)size);
   int cur = 0;
   for (int i = 0; s[i] != '\0'; i++) {
     if (isalpha(s[i]) || isdigit(s[i])) letters[cur++] = tolower(s[i]);

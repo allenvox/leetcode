@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int *smallerNumbersThanCurrent(int *nums, int numsSize, int *returnSize) {
-  int *results = malloc(sizeof(int) * numsSize);
+  int *results = malloc(sizeof(int) * (unsigned long)numsSize);
   for (int i = 0; i < numsSize; i++) {
     int local = 0;
     for (int j = 0; j < numsSize; j++) {

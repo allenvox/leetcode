@@ -5,7 +5,7 @@
 
 char *toLowerCase(char *s) {
   int size = strlen(s) + 1;
-  char *buff = malloc(sizeof(char) * size);
+  char *buff = malloc(sizeof(char) * (unsigned long)size);
   for (int i = 0; s[i] != '\0'; i++) {
     buff[i] = tolower(s[i]);
   }

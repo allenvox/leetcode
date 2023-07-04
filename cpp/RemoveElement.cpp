@@ -5,11 +5,11 @@ using namespace std;
 class Solution {
  public:
   int removeElement(vector<int> &nums, int val) {
-    int idx = 0;
-    for (int i = 0; i < (int)nums.size(); i++) {
+    unsigned long idx = 0;
+    for (unsigned long i = 0; i < nums.size(); i++) {
       if (nums[i] != val) nums[idx++] = nums[i];
     }
-    return idx;
+    return (int)idx;
   }
 
   void output(vector<int> &nums, int val) {
@@ -20,7 +20,7 @@ class Solution {
     cout << "} (size " << nums.size() << ") without elements that equal to "
          << val << " will be { ";
     int size = removeElement(nums, val);
-    for (int i = 0; i < size; i++) {
+    for (unsigned long i = 0; i < (unsigned long)size; i++) {
       cout << nums[i] << " ";
     }
     cout << "} (size " << size << ")" << endl;

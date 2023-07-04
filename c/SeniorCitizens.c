@@ -22,13 +22,13 @@ void output(char **details, int detailsSize) {
 
 int main() {
   int size = 3;
-  char **d1 = malloc(sizeof(char *) * size);
+  char **d1 = malloc(sizeof(char *) * (unsigned long)size);
   d1[0] = "7868190130M7522";
   d1[1] = "5303914400F9211";
   d1[2] = "9273338290F4010";
   output(d1, size);
   size = 2;
-  char **d2 = malloc(sizeof(char *) * size);
+  char **d2 = malloc(sizeof(char *) * (unsigned long)size);
   d2[0] = "1313579440F2036";
   d2[1] = "2921522980M5644";
   output(d2, size);

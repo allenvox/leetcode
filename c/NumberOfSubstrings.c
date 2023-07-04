@@ -23,19 +23,19 @@ void output(char **patterns, int patternsSize, char *word) {
 
 int main() {
   int size = 4;
-  char **p1 = malloc(sizeof(char *) * size);
+  char **p1 = malloc(sizeof(char *) * (unsigned long)size);
   p1[0] = "a";
   p1[1] = "abc";
   p1[2] = "bc";
   p1[3] = "d";
   output(p1, 4, "abc");
   size = 3;
-  char **p2 = malloc(sizeof(char *) * size);
+  char **p2 = malloc(sizeof(char *) * (unsigned long)size);
   p2[0] = "a";
   p2[1] = "b";
   p2[2] = "c";
   output(p2, 3, "aaaaabbbbb");
-  char **p3 = malloc(sizeof(char *) * size);
+  char **p3 = malloc(sizeof(char *) * (unsigned long)size);
   p3[0] = "a";
   p3[1] = "a";
   p3[2] = "a";

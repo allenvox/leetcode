@@ -5,8 +5,8 @@ using namespace std;
 class Solution {
  public:
   vector<int> plusOne(vector<int> &digits) {
-    int n = digits.size() - 1;
-    for (int i = n; i >= 0; i--) {
+    unsigned long n = digits.size() - 1;
+    for (unsigned long i = n; i >= 0; i--) {
       if (digits[i] == 9) {
         digits[i] = 0;
       } else {
@@ -20,12 +20,12 @@ class Solution {
   }
 
   void output(vector<int> &digits) {
-    for (int i = 0; i < (int)digits.size(); i++) {
+    for (unsigned long i = 0; i < digits.size(); i++) {
       cout << digits[i];
     }
     cout << " + 1 = ";
     digits = plusOne(digits);
-    for (int i = 0; i < (int)digits.size(); i++) {
+    for (unsigned long i = 0; i < digits.size(); i++) {
       cout << digits[i];
     }
     cout << endl;

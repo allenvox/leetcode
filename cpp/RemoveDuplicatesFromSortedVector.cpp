@@ -5,8 +5,8 @@ using namespace std;
 class Solution {
  public:
   int removeDuplicates(vector<int> &nums) {
-    int dupcount = 0;
-    for (int i = 1; i < (int)nums.size(); i++) {
+    unsigned long dupcount = 0;
+    for (unsigned long i = 1; i < nums.size(); i++) {
       if (nums[i] == nums[i - 1])
         dupcount++;
       else
@@ -22,7 +22,7 @@ class Solution {
     }
     cout << "} (size " << nums.size() << ") without duplicates will be { ";
     int size = removeDuplicates(nums);
-    for (int i = 0; i < size; i++) {
+    for (unsigned long i = 0; i < (unsigned long)size; i++) {
       cout << nums[i] << " ";
     }
     cout << "} (size " << size << ")" << endl;

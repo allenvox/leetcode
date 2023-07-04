@@ -26,13 +26,13 @@ void output(char **sentences, int sentencesSize) {
 
 int main() {
   int size = 3;
-  char **s1 = malloc(sizeof(char *) * size);
+  char **s1 = malloc(sizeof(char *) * (unsigned long)size);
   s1[0] = "alice and bob love leetcode";
   s1[1] = "i think so too";
   s1[2] = "this is great thanks very much";
   output(s1, 3);
   printf("\n");
-  char **s2 = malloc(sizeof(char *) * size);
+  char **s2 = malloc(sizeof(char *) * (unsigned long)size);
   s2[0] = "please wait";
   s2[1] = "continue to fight";
   s2[2] = "continue to win";

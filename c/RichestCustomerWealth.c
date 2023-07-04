@@ -27,9 +27,9 @@ void output(int **accounts, int accountsSize, int *accountsColSize) {
 
 int main() {
   int colsize1 = 3, asize1 = 2;
-  int **a1 = malloc(sizeof(int *) * asize1);
-  a1[0] = malloc(sizeof(int) * colsize1);
-  a1[1] = malloc(sizeof(int) * colsize1);
+  int **a1 = malloc(sizeof(int *) * (unsigned long)asize1);
+  a1[0] = malloc(sizeof(int) * (unsigned long)colsize1);
+  a1[1] = malloc(sizeof(int) * (unsigned long)colsize1);
   a1[0][0] = 1;
   a1[0][1] = 2;
   a1[0][2] = 3;
@@ -39,10 +39,10 @@ int main() {
   output(a1, asize1, &colsize1);
   printf("\n");
   int colsize2 = 2, asize2 = 3;
-  int **a2 = malloc(sizeof(int *) * asize2);
-  a2[0] = malloc(sizeof(int) * colsize2);
-  a2[1] = malloc(sizeof(int) * colsize2);
-  a2[2] = malloc(sizeof(int) * colsize2);
+  int **a2 = malloc(sizeof(int *) * (unsigned long)asize2);
+  a2[0] = malloc(sizeof(int) * (unsigned long)colsize2);
+  a2[1] = malloc(sizeof(int) * (unsigned long)colsize2);
+  a2[2] = malloc(sizeof(int) * (unsigned long)colsize2);
   a2[0][0] = 1;
   a2[0][1] = 5;
   a2[1][0] = 7;

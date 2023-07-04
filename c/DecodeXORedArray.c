@@ -3,7 +3,7 @@
 
 int *decode(int *encoded, int encodedSize, int first, int *returnSize) {
   *returnSize = encodedSize + 1;
-  int *arr = malloc(sizeof(int) * (*returnSize));
+  int *arr = malloc(sizeof(int) * (unsigned long)(*returnSize));
   arr[0] = first;
   for (int i = 0; i < encodedSize; i++) {
     arr[i + 1] = arr[i] ^ encoded[i];
