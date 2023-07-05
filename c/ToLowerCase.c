@@ -14,7 +14,9 @@ char *toLowerCase(char *s) {
 }
 
 void output(char *s) {
-  printf("\"%s\" to lower case is \"%s\"\n", s, toLowerCase(s));
+  char *res = toLowerCase(s);
+  printf("\"%s\" to lower case is \"%s\"\n", s, res);
+  free(res);
 }
 
 int main() {

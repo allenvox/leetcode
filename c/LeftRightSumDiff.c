@@ -27,6 +27,7 @@ void output(int *nums, int numsSize) {
   for (int i = 0; i < numsSize; i++) {
     printf("%d: %d\n", nums[i], results[i]);
   }
+  free(results);
 }
 
 int main() {

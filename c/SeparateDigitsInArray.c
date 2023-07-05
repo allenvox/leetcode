@@ -36,6 +36,7 @@ void output(int *nums, int numsSize) {
     printf("%d ", res[i]);
   }
   printf("}\n");
+  free(res);
 }
 
 int main() {

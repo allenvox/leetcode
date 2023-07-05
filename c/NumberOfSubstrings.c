@@ -29,16 +29,21 @@ int main() {
   p1[2] = "bc";
   p1[3] = "d";
   output(p1, 4, "abc");
+  free(p1);
+
   size = 3;
   char **p2 = malloc(sizeof(char *) * (unsigned long)size);
   p2[0] = "a";
   p2[1] = "b";
   p2[2] = "c";
   output(p2, 3, "aaaaabbbbb");
+  free(p2);
+
   char **p3 = malloc(sizeof(char *) * (unsigned long)size);
   p3[0] = "a";
   p3[1] = "a";
   p3[2] = "a";
   output(p3, 3, "ab");
+  free(p3);
   return 0;
 }

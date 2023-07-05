@@ -38,6 +38,8 @@ int main() {
   a1[1][2] = 2;
   output(a1, asize1, &colsize1);
   printf("\n");
+  free(a1);
+
   int colsize2 = 2, asize2 = 3;
   int **a2 = malloc(sizeof(int *) * (unsigned long)asize2);
   a2[0] = malloc(sizeof(int) * (unsigned long)colsize2);
@@ -50,5 +52,6 @@ int main() {
   a2[2][0] = 3;
   a2[2][1] = 5;
   output(a2, asize2, &colsize2);
+  free(a2);
   return 0;
 }

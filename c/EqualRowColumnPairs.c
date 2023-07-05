@@ -45,6 +45,10 @@ int main() {
   x3[2][2] = 7;
   output(x3, size);
   printf("\n");
+  free(x3[0]);
+  free(x3[1]);
+  free(x3[2]);
+
   size = 4;
   int **x4 = malloc(sizeof(int *) * (unsigned long)size);
   for (int i = 0; i < size; i++) {
@@ -67,5 +71,8 @@ int main() {
   x4[3][2] = 2;
   x4[3][3] = 2;
   output(x4, size);
+  free(x4[0]);
+  free(x4[1]);
+  free(x4[2]);
   return 0;
 }

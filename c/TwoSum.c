@@ -21,5 +21,6 @@ int main() {
   int target = 9, returnSize = 0;
   int* twosum = twoSum(nums, 4, target, &returnSize);
   printf("%d %d\n", twosum[0], twosum[1]);
+  free(twosum);
   return 0;
 }

@@ -26,6 +26,7 @@ void output(int *nums, int numsSize) {
     printf("%d ", results[i]);
   }
   printf("}\n");
+  free(results);
 }
 
 int main() {

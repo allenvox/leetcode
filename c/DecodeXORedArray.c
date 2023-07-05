@@ -21,6 +21,7 @@ void output(int *encoded, int encodedSize, int first) {
   for (int i = 0; i < decodedSize; i++) {
     printf("%d ", decoded[i]);
   }
+  free(decoded);
   printf("}\n");
 }
 

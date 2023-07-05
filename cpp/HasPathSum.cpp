@@ -8,6 +8,10 @@ struct TreeNode {
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
   TreeNode(int x, TreeNode *l, TreeNode *r) : val(x), left(l), right(r) {}
+  ~TreeNode() {
+    delete left;
+    delete right;
+  }
 };
 
 class Solution {
@@ -49,8 +53,10 @@ int main() {
       new TreeNode(8, new TreeNode(13),
                    new TreeNode(4, nullptr, new TreeNode(1))));
   s.output(t1, 22);
+  delete t1;
   TreeNode *t2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
   s.output(t2, 7);
   s.output(t2, 4);
+  delete t2;
   return 0;
 }

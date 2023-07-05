@@ -27,10 +27,12 @@ int main() {
   d1[1] = "5303914400F9211";
   d1[2] = "9273338290F4010";
   output(d1, size);
+  free(d1);
   size = 2;
   char **d2 = malloc(sizeof(char *) * (unsigned long)size);
   d2[0] = "1313579440F2036";
   d2[1] = "2921522980M5644";
   output(d2, size);
+  free(d2);
   return 0;
 }

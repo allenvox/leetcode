@@ -21,7 +21,9 @@ void output(char **strs, int strsSize) {
   for (int i = 0; i < strsSize; i++) {
     printf("\"%s\" ", strs[i]);
   }
-  printf("} is \"%s\"\n", longestCommonPrefix(strs, strsSize));
+  char *res = longestCommonPrefix(strs, strsSize);
+  printf("} is \"%s\"\n", res);
+  free(res);
 }
 
 int main() {
@@ -30,10 +32,13 @@ int main() {
   strs1[1] = "flow";
   strs1[2] = "flight";
   output(strs1, 3);
+  free(strs1);
+
   char **strs2 = malloc(sizeof(char) * 3 * 10);
   strs2[0] = "dog";
   strs2[1] = "racecar";
   strs2[2] = "car";
   output(strs2, 3);
+  free(strs2);
   return 0;
 }

@@ -14,8 +14,12 @@ bool isPalindrome(char *s) {
     if (isalpha(s[i]) || isdigit(s[i])) letters[cur++] = tolower(s[i]);
   }
   for (int i = 0; i < size / 2; i++) {
-    if (letters[i] != letters[size - i - 1]) return false;
+    if (letters[i] != letters[size - i - 1]) {
+      free(letters);
+      return false;
+    }
   }
+  free(letters);
   return true;
 }
 

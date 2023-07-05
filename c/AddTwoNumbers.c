@@ -8,8 +8,7 @@ struct ListNode {
 };
 
 void deleteList(struct ListNode *l) {
-  if(l->next != NULL)
-    deleteList(l->next);
+  if (l->next != NULL) deleteList(l->next);
   free(l);
 }
 
@@ -43,7 +42,7 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
 void output(struct ListNode *l1, struct ListNode *l2) {
   struct ListNode *temp = l1, *res = addTwoNumbers(l1, l2);
   char s[64] = "\n";
-  while(temp) {
+  while (temp) {
     char buff[5];
     sprintf(buff, "%d ", temp->val);
     strcat(s, buff);
@@ -51,7 +50,7 @@ void output(struct ListNode *l1, struct ListNode *l2) {
   }
   strcat(s, "+ ");
   temp = l2;
-  while(temp) {
+  while (temp) {
     char buff[5];
     sprintf(buff, "%d ", temp->val);
     strcat(s, buff);
@@ -59,13 +58,13 @@ void output(struct ListNode *l1, struct ListNode *l2) {
   }
   strcat(s, "= ");
   temp = res;
-  while(temp) {
+  while (temp) {
     char buff[5];
     sprintf(buff, "%d ", temp->val);
     strcat(s, buff);
     temp = temp->next;
   }
-  for(int i = strlen(s); i >= 0; i--) {
+  for (int i = strlen(s); i >= 0; i--) {
     printf("%c", s[i]);
   }
   deleteList(res);

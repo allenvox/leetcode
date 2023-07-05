@@ -27,7 +27,9 @@ char *interpret(char *command) {
 }
 
 void output(char *command) {
-  printf("%s\t--(parser)->\t%s\n", command, interpret(command));
+  char *res = interpret(command);
+  printf("%s\t--(parser)->\t%s\n", command, res);
+  free(res);
 }
 
 int main() {

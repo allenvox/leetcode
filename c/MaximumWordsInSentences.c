@@ -32,10 +32,13 @@ int main() {
   s1[2] = "this is great thanks very much";
   output(s1, 3);
   printf("\n");
+  free(s1);
+
   char **s2 = malloc(sizeof(char *) * (unsigned long)size);
   s2[0] = "please wait";
   s2[1] = "continue to fight";
   s2[2] = "continue to win";
   output(s2, 3);
+  free(s2);
   return 0;
 }

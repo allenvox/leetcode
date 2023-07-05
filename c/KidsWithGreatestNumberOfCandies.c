@@ -34,6 +34,7 @@ void output(int *candies, int candiesSize, int extraCandies, int *returnSize) {
     }
     printf("the greatest among the kids.\n");
   }
+  free(results);
 }
 
 int main() {

@@ -7,6 +7,7 @@ struct ListNode {
   ListNode() : val(0), next(nullptr) {}
   ListNode(int x) : val(x), next(nullptr) {}
   ListNode(int x, ListNode *n) : val(x), next(n) {}
+  ~ListNode() { delete next; }
 };
 
 class Solution {
@@ -58,5 +59,7 @@ int main() {
   ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(7)));
   ListNode *l2 = new ListNode(0, new ListNode(3, new ListNode(6)));
   solution.output(l1, l2);
+  delete l1;
+  delete l2;
   return 0;
 }
