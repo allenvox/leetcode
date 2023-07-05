@@ -27,3 +27,8 @@ run: $(CEXEC) $(CXXEXEC)
 .SILENT: clean
 clean:
 	rm -f $(CEXEC) $(CXXEXEC)
+
+.PHONY: format
+.SILENT: format
+format:
+	clang-format -i $(CSRC) $(CXXSRC)
