@@ -32,3 +32,13 @@ clean:
 .SILENT: format
 format:
 	clang-format -i $(CSRC) $(CXXSRC)
+
+c/%: c/%.c
+	$(CC) $(CFLAGS) -o $@.cout $<
+	@echo "Task $@:"
+	@$@.cout
+
+cpp/%: cpp/%.cpp
+	$(CXX) $(CFLAGS) $(CXXFLAGS) -o $@.cppout $<
+	@echo "Task $@:"
+	@$@.cppout
