@@ -3,7 +3,8 @@ using namespace std;
 
 class Solution {
  public:
-  unsigned int chunks[16] = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
+  unsigned int chunks[16] = {0, 8, 4, 12, 2, 10, 6, 14,
+                             1, 9, 5, 13, 3, 11, 7, 15};
 
   uint32_t reverseBits(uint32_t n) {
     uint32_t ans = 0;
