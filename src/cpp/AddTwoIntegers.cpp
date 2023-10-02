@@ -5,8 +5,7 @@ class Solution {
   static int sum(int num1, int num2) { return num1 + num2; }
 
   static void output(int num1, int num2) {
-    std::cout << num1 << " + " << num2 << " = " << sum(num1, num2)
-              << '\n';
+    std::cout << num1 << " + " << num2 << " = " << sum(num1, num2) << '\n';
   }
 };
 
