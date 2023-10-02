@@ -1,4 +1,14 @@
+### bin directory ###
+bin
+
+### macOS ###
 .DS_Store
+
+### debug files ###
+*.dSYM
+
+### VSCode ###
 .vscode
-*.exe
-*.*out
+
+### JetBrains ###
+.idea/
