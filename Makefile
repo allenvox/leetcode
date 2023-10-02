@@ -1,27 +1,30 @@
+DIRGUARD = @mkdir -p $(@D)
+
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Wshadow -Wsign-conversion
-CSRC = $(wildcard c/*.c)
-CEXEC = $(patsubst %.c,%.cout,$(CSRC))
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wsign-conversion -ld_classic
+CSRC = $(wildcard src/c/*.c)
+CEXEC = $(patsubst src/c/%.c,bin/%,$(CSRC))
 
 CXX = g++
 CXXFLAGS = -pedantic -std=c++17
-CXXSRC = $(wildcard cpp/*.cpp)
-CXXEXEC = $(patsubst %.cpp,%.cppout,$(CXXSRC))
+CXXSRC = $(wildcard src/cpp/*.cpp)
+CXXEXEC = $(patsubst src/cpp/%.cpp,bin/%,$(CXXSRC))
 
 .PHONY: all
 all: $(CEXEC) $(CXXEXEC)
 
-%.cout: %.c
+bin/%: src/c/%.c
+	$(DIRGUARD)
 	$(CC) $(CFLAGS) -o $@ $<
 
-%.cppout: %.cpp
+bin/%: src/cpp/%.cpp
+	$(DIRGUARD)
 	$(CXX) $(CFLAGS) $(CXXFLAGS) -o $@ $<
 
 .PHONY: run
 .SILENT: run
 run: $(CEXEC) $(CXXEXEC)
-	for out in c/*.cout; do echo "\nTask $$out:"; $$out; done
-	for out in cpp/*.cppout; do echo "\nTask $$out:"; $$out; done
+	for out in bin/*; do echo "\nTask $$out:"; $$out; done
 
 .PHONY: clean
 .SILENT: clean
@@ -32,13 +35,3 @@ clean:
 .SILENT: format
 format:
 	clang-format -i $(CSRC) $(CXXSRC)
-
-c/%: c/%.c
-	$(CC) $(CFLAGS) -o $@.cout $<
-	@echo "Task $@:"
-	@$@.cout
-
-cpp/%: cpp/%.cpp
-	$(CXX) $(CFLAGS) $(CXXFLAGS) -o $@.cppout $<
-	@echo "Task $@:"
-	@$@.cppout
