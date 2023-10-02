@@ -1,7 +1,7 @@
 DIRGUARD = @mkdir -p $(@D)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Wshadow -Wsign-conversion -ld_classic
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wsign-conversion
 CSRC = $(wildcard src/c/*.c)
 CEXEC = $(patsubst src/c/%.c,bin/%,$(CSRC))
 
@@ -9,6 +9,11 @@ CXX = g++
 CXXFLAGS = -pedantic -std=c++17
 CXXSRC = $(wildcard src/cpp/*.cpp)
 CXXEXEC = $(patsubst src/cpp/%.cpp,bin/%,$(CXXSRC))
+
+UNAME = $(uname)
+ifeq ($(UNAME), Darwin)
+CFLAGS += -ld_classic
+endif
 
 .PHONY: all
 all: $(CEXEC) $(CXXEXEC)
