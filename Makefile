@@ -10,9 +10,9 @@ CXXFLAGS = -pedantic -std=c++17
 CXXSRC = $(wildcard src/cpp/*.cpp)
 CXXEXEC = $(patsubst src/cpp/%.cpp,bin/%,$(CXXSRC))
 
-UNAME = $(uname)
+UNAME = $(shell uname)
 ifeq ($(UNAME), Darwin)
-CFLAGS += -ld_classic
+	CFLAGS += -ld_classic
 endif
 
 .PHONY: all
